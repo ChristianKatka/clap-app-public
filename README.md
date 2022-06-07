@@ -3,7 +3,7 @@
 Sosiaalisen median sovellus jossa voi tehdä postauksia kuvalla tai ilman ja selata postauksia paikkakunta kohtaisesti.
 Olen kehittänyt projektin täysin itse ( projekti on vielä kehitys vaiheessa vaikka paljon toiminnallisuuksia jo on )
 
-Käy testailemassa painamalla oheista linkkiä: (https://clap-app.net/)
+Käy testailemassa painamalla oheista linkkiä: [clap-app](https://clap-app.net/)
 (Käyttäjän luomis vaiheessa vahvistus koodi saattaa mennä roskapostiin)
 
 # Teknologiat
