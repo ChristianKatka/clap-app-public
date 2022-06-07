@@ -1,0 +1,19 @@
+@import "../../styles.scss";
+@include disable-auto-zoom-on-iphone-input-fields;
+
+.edit-profile-text {
+  font-weight: bold;
+}
+
+.done-text {
+  font-weight: bold;
+  color: $clap-blue;
+}
+
+.profile-picture {
+  margin-top: 2rem;
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}

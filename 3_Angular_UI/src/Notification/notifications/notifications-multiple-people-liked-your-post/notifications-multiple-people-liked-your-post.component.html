@@ -1,0 +1,49 @@
+<div
+  *ngIf="notifications"
+  style="margin-top: 1rem"
+  class="multiple-people-liked-your-post-wrapper"
+  fxLayoutAlign="space-between center"
+>
+  <section fxLayout="row" fxLayoutAlign="center center">
+    <div class="two-profile-images-wrapper">
+      <img
+        [src]="notifications[0].notificationCreatorsProfileImage"
+        alt="first-profile-image"
+        class="first-profile-image"
+      />
+      <img
+        [src]="notifications[1].notificationCreatorsProfileImage"
+        alt="second-profile-image"
+        class="second-profile-image"
+      />
+    </div>
+    <span style="line-height: 17px"
+      ><b
+        >{{ notifications[0].postLikersNickname }},
+        {{ notifications[1].postLikersNickname }}</b
+      >
+      <span *ngIf="notifications.length > 2"> and </span>
+      <b *ngIf="notifications.length > 2"
+        >{{ notifications.length - 2 }} others,</b
+      >
+      liked your post.<span class="date-text">{{
+        notifications[0].createdAt | timeAgo
+      }}</span></span
+    >
+  </section>
+
+  <img
+    *ngIf="notifications[0].postMediaUrl"
+    class="posted-image"
+    [src]="notifications[0].postMediaUrl"
+    alt=""
+  />
+
+  <div
+    class="posted-text-wrapper"
+    *ngIf="notifications[0].postMediaUrl === false"
+    fxLayoutAlign="center center"
+  >
+    <span>{{ notifications[0].postText }}</span>
+  </div>
+</div>

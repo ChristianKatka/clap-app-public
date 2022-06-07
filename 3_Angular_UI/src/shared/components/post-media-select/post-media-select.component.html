@@ -1,0 +1,13 @@
+<label fxLayout="row">
+  <input appFileSelect type="file" (fileSelect)="onFileSelect($event)" />
+
+  <div
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+    class="upload-media-wrapper"
+  >
+    <mat-icon class="material-icons-outlined">add_photo_alternate</mat-icon>
+    <p>Upload Media</p>
+  </div>
+</label>

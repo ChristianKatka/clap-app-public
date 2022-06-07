@@ -1,0 +1,142 @@
+<section fxLayoutAlign="center center">
+  <object data="assets/art/secure_login.svg" type="image/svg+xml"></object>
+</section>
+
+<h1>Register</h1>
+
+<clap-app-alert
+  *ngIf="usernameAlreadyExists"
+  [text]="'Email already exists'"
+></clap-app-alert>
+
+<form [formGroup]="signUpUserDataForm">
+  <!-- EMAIL -->
+  <mat-form-field appearance="outline">
+    <mat-error *ngIf="signUpUserDataForm.get('email')?.hasError('required')"
+      >Email is required</mat-error
+    >
+    <mat-error *ngIf="signUpUserDataForm.get('email')?.hasError('email')">
+      Input real email address
+    </mat-error>
+    <mat-label>Email</mat-label>
+    <input
+      matInput
+      type="email"
+      autocomplete="email"
+      required
+      maxlength="40"
+      formControlName="email"
+    />
+    <mat-icon class="material-icons-outlined" matPrefix>mail</mat-icon>
+    <mat-hint>E.g. funny.guy@gmail.com (You will login with email)</mat-hint>
+  </mat-form-field>
+
+  <!-- NICKNAME -->
+  <mat-form-field appearance="outline">
+    <mat-error *ngIf="signUpUserDataForm.get('nickname')?.hasError('required')"
+      >Nickname is required</mat-error
+    >
+    <mat-error *ngIf="signUpUserDataForm.get('nickname')?.hasError('pattern')">
+      Only letters and numbers are allowed
+    </mat-error>
+    <mat-label>Nickname</mat-label>
+    <input
+      matInput
+      type="text"
+      required
+      maxlength="30"
+      formControlName="nickname"
+    />
+    <mat-icon class="material-icons-outlined" matPrefix
+      >account_circle</mat-icon
+    >
+    <mat-hint>E.g. FunnyGuy123</mat-hint>
+  </mat-form-field>
+</form>
+
+<form [formGroup]="passwordsForm">
+  <!-- PASSWORD -->
+  <mat-form-field
+    appearance="outline"
+    hintLabel="Should be at least 8 characters long."
+  >
+    <mat-error *ngIf="passwordsForm.get('password')?.hasError('minlength')"
+      >Password required length 8</mat-error
+    >
+    <mat-error *ngIf="passwordsForm.get('password')?.hasError('required')"
+      >Password is required</mat-error
+    >
+    <mat-error *ngIf="passwordsForm.get('password')?.hasError('pattern')">
+      White space is not allowed in the start or the end
+    </mat-error>
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      [type]="showPassword ? 'text' : 'password'"
+      required
+      minlength="8"
+      maxlength="40"
+      formControlName="password"
+    />
+    <mat-icon class="material-icons-outlined" matPrefix>lock</mat-icon>
+    <mat-icon
+      matSuffix
+      (click)="showPassword = !showPassword"
+      class="toggleShowPasswordButton material-icons-outlined"
+      >{{ showPassword ? "visibility" : "visibility_off" }}</mat-icon
+    >
+    <mat-hint align="end">
+      {{ passwordsForm.get("password")?.value?.length }} / 8</mat-hint
+    >
+  </mat-form-field>
+
+  <!-- CONFIRM PASSWORD -->
+  <mat-form-field appearance="outline">
+    <mat-error *ngIf="passwordsForm.get('passwordConfirm')?.dirty">
+      Passwords need to be same
+    </mat-error>
+    <mat-label>Confirm password</mat-label>
+    <input
+      matInput
+      maxlength="40"
+      [errorStateMatcher]="matcher"
+      [type]="showPasswordConfirm ? 'text' : 'password'"
+      formControlName="passwordConfirm"
+    />
+    <mat-icon class="material-icons-outlined" matPrefix>lock</mat-icon>
+    <mat-icon
+      matSuffix
+      (click)="showPasswordConfirm = !showPasswordConfirm"
+      class="toggleShowPasswordButton material-icons-outlined"
+      >{{ showPasswordConfirm ? "visibility" : "visibility_off" }}</mat-icon
+    >
+    <mat-hint>Should be same as password above</mat-hint>
+  </mat-form-field>
+</form>
+<div
+  class="bottom-centered-items"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
+  <small>
+    By signing up you accept the<br />
+    <b (click)="this.showTermsOfService.emit()">Terms of Service</b> and
+    <b (click)="this.showPrivacyPolicy.emit()">Privacy Policy</b>
+  </small>
+
+  <button
+    *ngIf="!isLoading"
+    mat-raised-button
+    mat-button
+    color="primary"
+    [disabled]="this.signUpUserDataForm.invalid && this.passwordsForm.invalid"
+    (click)="submit()"
+  >
+    Register
+  </button>
+  <button *ngIf="isLoading" mat-raised-button color="primary" disabled>
+    <clap-app-loading-spinner [diameter]="40"></clap-app-loading-spinner>
+  </button>
+
+  <span>Already registered? <b routerLink="/sign-in">Login</b></span>
+</div>

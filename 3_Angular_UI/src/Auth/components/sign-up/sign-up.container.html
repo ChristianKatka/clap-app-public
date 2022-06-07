@@ -1,0 +1,11 @@
+<main fxLayoutAlign="center center">
+  <section [style.width]="'90%'">
+    <clap-app-sign-up-form
+      [isLoading]="signUpStateService.isLoading$ | async | onlyBoolean"
+      [usernameAlreadyExists]="signUpStateService.usernameAlreadyExists$ | async | onlyBoolean"
+      (showTermsOfService)="onShowTermsOfService()"
+      (showPrivacyPolicy)="onShowPrivacyPolicy()"
+      (signUp)="onSignUp($event)"
+    ></clap-app-sign-up-form>
+  </section>
+</main>

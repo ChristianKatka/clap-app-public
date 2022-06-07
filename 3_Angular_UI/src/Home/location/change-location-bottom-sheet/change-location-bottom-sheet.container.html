@@ -1,0 +1,7 @@
+<clap-app-change-location-bottom-sheet
+  [selectedPostLocation]="selectedPostLocation$ | async"
+  [postLocations]="postLocations$ | async"
+  (onSelectLocation)="onSelectLocation($event)"
+  (onSearchTextInputted)="searchTextInputted($event)"
+  (closeBottomSheet)="close()"
+></clap-app-change-location-bottom-sheet>

@@ -1,0 +1,10 @@
+@import "../../../../styles.scss";
+@include disable-auto-zoom-on-iphone-input-fields;
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-icon {
+  font-size: 1.3em;
+}

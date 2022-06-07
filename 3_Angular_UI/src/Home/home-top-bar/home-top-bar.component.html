@@ -1,0 +1,30 @@
+<mat-toolbar fxLayoutAlign="space-between center">
+  <span>ClapApp</span>
+
+  <section fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <a mat-icon-button routerLink="/create-post">
+      <mat-icon class="material-icons-outlined">add</mat-icon>
+    </a>
+
+    <a
+      *ngIf="notificationsAmount && notificationsAmount >= 1"
+      mat-icon-button
+      routerLink="/notification"
+      routerLinkActive="active"
+    >
+      <mat-icon
+        class="material-icons-outlined"
+        [matBadge]="notificationsAmount"
+        matBadgeColor="warn"
+        >favorite_border</mat-icon
+      >
+    </a>
+    <a
+      *ngIf="!notificationsAmount"
+      mat-icon-button
+      routerLink="/notification"
+    >
+      <mat-icon class="material-icons-outlined">favorite_border</mat-icon>
+    </a>
+  </section>
+</mat-toolbar>

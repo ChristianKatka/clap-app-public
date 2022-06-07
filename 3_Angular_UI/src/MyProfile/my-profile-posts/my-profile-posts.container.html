@@ -1,0 +1,9 @@
+<main *ngIf="myPosts$ | async as myPosts">
+  <clap-app-posts
+    [posts]="myPosts"
+    [myProfileImage]="myProfileImage$ | async"
+    (giveLikeToPost)="onGiveLikeToPost($event)"
+    (removeLikeFromPost)="onRemoveLikeFromPost($event)"
+    (clickedAddComment)="onClickedAddComment()"
+  ></clap-app-posts>
+</main>

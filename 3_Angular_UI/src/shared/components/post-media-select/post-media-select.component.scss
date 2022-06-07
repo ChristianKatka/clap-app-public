@@ -1,0 +1,31 @@
+@use "../../../styles.scss" as styles;
+
+:host {
+  width: 100%;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.upload-media-wrapper {
+  cursor: pointer;
+  border-radius: 6px;
+  height: 6rem;
+  width: 100%;
+  border: solid 1px lightgrey;
+
+  p {
+    color: styles.$clap-blue;
+    margin: 0;
+    font-size: 21px;
+  }
+  mat-icon {
+    transform: scale(1.4);
+  }
+}

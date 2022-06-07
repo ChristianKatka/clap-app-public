@@ -1,0 +1,48 @@
+@import "../../styles.scss";
+
+.profile-image-wrapper {
+  position: relative;
+
+  .profile-picture {
+    margin-top: 5rem;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  .edit-button {
+    position: absolute;
+    right: -13px;
+    bottom: 21px;
+    background-color: white;
+  }
+}
+
+.user-name {
+  margin: 0;
+  font-size: 25px;
+  font-weight: bold;
+}
+.at-username {
+  margin-bottom: 13px;
+}
+
+.verified-icon {
+  color: #248ce7;
+  transform: scale(0.9);
+}
+
+mat-divider {
+  margin: 1rem 0;
+}
+
+.bold-number {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.gray-text {
+  color: $clap-gray;
+}

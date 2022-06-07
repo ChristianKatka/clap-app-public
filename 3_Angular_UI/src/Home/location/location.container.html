@@ -1,0 +1,5 @@
+<clap-app-location
+  *ngIf="selectedPostLocation$ | async as selectedPostLocation"
+  [selectedPostLocation]="selectedPostLocation"
+  (openChangeLocationBottomSheet)="openChangeLocationBottomSheet()"
+></clap-app-location>

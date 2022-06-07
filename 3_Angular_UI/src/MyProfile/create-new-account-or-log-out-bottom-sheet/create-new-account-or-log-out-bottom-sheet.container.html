@@ -1,0 +1,30 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <button
+    mat-icon-button
+    aria-label="Close"
+    (click)="close()"
+    class="top-button"
+  >
+    <mat-icon class="material-icons-outlined">maximize</mat-icon>
+  </button>
+</div>
+<p class="username" style="font-size: 19px"><b>ChristianKatka</b></p>
+
+<mat-divider class="divider"></mat-divider>
+
+<main>
+  <section matRipple fxLayoutAlign="start center">
+    <mat-icon class="material-icons-outlined" matListIcon
+      >account_circle</mat-icon
+    >
+    <p>Logout and create new user</p>
+  </section>
+  <section matRipple (click)="logOut()" fxLayoutAlign="start center">
+    <mat-icon class="material-icons-outlined" matListIcon>logout</mat-icon>
+    <p>Log out</p>
+  </section>
+
+  <div fxLayoutAlign="center center">
+    <a (click)="close()" class="cancel-button">Cancel</a>
+  </div>
+</main>

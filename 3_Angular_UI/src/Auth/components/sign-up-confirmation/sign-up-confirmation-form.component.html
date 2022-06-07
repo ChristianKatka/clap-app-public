@@ -1,0 +1,94 @@
+<section fxLayoutAlign="center center">
+  <object data="assets/art/vault.svg" type="image/svg+xml"></object>
+</section>
+
+<section
+  fxLayout="column"
+  fxLayoutGap="1rem"
+  fxLayoutAlign="space-around center"
+>
+  <h1>Email Confirmation</h1>
+
+  <p class="text-center">
+    We sent you an email with confirmation code. Input given confirmation code
+    to field below.
+  </p>
+</section>
+
+<form
+  class="activate-form"
+  fxLayout="column"
+  fxLayoutAlign="start"
+  fxLayoutGap="8px"
+  [formGroup]="confirmationCodeForm"
+>
+  <mat-form-field appearance="outline">
+    <mat-label>Confirmation Code</mat-label>
+    <input
+      matInput
+      type="tel"
+      required
+      minlength="6"
+      maxlength="8"
+      formControlName="confirmationCode"
+    />
+    <mat-error> Confirmation code is required </mat-error>
+  </mat-form-field>
+
+  <button *ngIf="isLoading" mat-raised-button color="primary" disabled>
+    <clap-app-loading-spinner [diameter]="40"></clap-app-loading-spinner>
+  </button>
+  <button
+    *ngIf="!isLoading"
+    mat-raised-button
+    [disabled]="this.confirmationCodeForm.invalid"
+    color="primary"
+    (click)="submit()"
+  >
+    Confirm
+  </button>
+
+  <!-- WRONG CODE ALERT -->
+  <section
+    class="alert"
+    fxLayoutAlign="start center"
+    fxLayoutGap="8px"
+    *ngIf="emailConfirmationCodeMismatch"
+  >
+    <mat-icon>error_outline</mat-icon>
+    <mat-error>
+      Confirmation code was incorrect or old. Please check code from your email
+      or get new code by pressing button below
+      <br />
+    </mat-error>
+  </section>
+
+  <section
+    class="alert"
+    fxLayoutAlign="start center"
+    fxLayoutGap="8px"
+    *ngIf="newConfirmationCodeLimitExceeded"
+  >
+    <mat-icon>error_outline</mat-icon>
+    <mat-error>
+      Confirmation code for email: <strong>{{ email }}</strong> has been asked
+      too many times in short period of time. Please check your email or try
+      again later
+      <br />
+    </mat-error>
+  </section>
+
+  <mat-divider></mat-divider>
+  <p *ngIf="newConfirmationCodeSent" class="info">
+    New confirmation code has been sent to email address:
+    <strong> {{ email }}</strong>
+  </p>
+
+  <button
+    *ngIf="!isLoading"
+    mat-button
+    (click)="newEmailConfirmationCodeOrdered()"
+  >
+    Get New Confirmation Code
+  </button>
+</form>

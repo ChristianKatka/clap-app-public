@@ -1,0 +1,10 @@
+<main fxLayoutAlign="center center">
+  <section [style.width]="'90%'">
+    <app-sign-in-form
+      [isLoading]="signInStateService.isLoading$ | async | onlyBoolean"
+      [isWrongUsernameOrPassword]="signInStateService.isWrongUsernameOrPassword$ | async | onlyBoolean"
+      (signIn)="onSignIn($event)"
+    >
+    </app-sign-in-form>
+  </section>
+</main>

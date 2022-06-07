@@ -1,0 +1,9 @@
+# dependencies
+/node_modules
+.env
+/build
+
+/server/app.ts
+/server/middlewares
+/server/instances
+/sam

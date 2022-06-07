@@ -1,0 +1,60 @@
+@use "../../../styles.scss" as s;
+
+.profile-image {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+.user-name {
+  font-weight: bold;
+  margin-right: 3px;
+}
+
+.date-text {
+  margin-left: 3px;
+  color: s.$clap-gray;
+}
+
+.posted-image {
+  height: 45px;
+  object-fit: cover;
+}
+
+// ---
+
+
+.profile-image {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+.date-text {
+  margin-left: 5px;
+  color: s.$clap-gray;
+}
+
+.posted-image {
+  margin-left: 12px;
+  height: 45px;
+  min-width: 75px;
+  width: 75px;
+  object-fit: cover;
+}
+
+.posted-text-wrapper {
+  margin-left: 5px;
+  min-width: 75px;
+  width: 75px;
+  height: 45px;
+  background: linear-gradient(163deg, #ffffff 0%, #aab7ff 100%);
+
+  span {
+    font-size: 7px;
+  }
+}

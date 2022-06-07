@@ -1,0 +1,40 @@
+@import "../../styles.scss";
+
+p {
+  margin: 0;
+}
+
+.top-button {
+  margin-bottom: -16px;
+  mat-icon {
+    color: $clap-dark-gray;
+  }
+}
+
+.username {
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.divider {
+  margin-top: 20px;
+}
+
+main {
+  margin-top: 1rem;
+}
+
+section {
+  padding: 10px 0;
+  cursor: pointer;
+
+  p {
+    margin-left: 10px;
+  }
+}
+
+.cancel-button {
+  cursor: pointer;
+  color: $clap-blue;
+  padding-bottom: 20px;
+}

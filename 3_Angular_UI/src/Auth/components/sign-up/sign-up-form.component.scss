@@ -1,0 +1,45 @@
+@import "../../../styles.scss";
+@include disable-auto-zoom-on-iphone-input-fields;
+
+object {
+  width: 15rem;
+  margin-top: 1rem;
+}
+h1 {
+  margin: 20px 0px;
+}
+mat-form-field {
+  width: 100%;
+  margin: 20px 0;
+}
+
+button {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+mat-icon {
+  color: $clap-dark-gray;
+}
+
+b {
+  cursor: pointer;
+  color: $clap-blue;
+}
+
+small {
+  text-align: center;
+}
+
+.toggleShowPasswordButton {
+  cursor: pointer;
+}
+
+.bottom-centered-items {
+  margin-bottom: 1rem;
+}
+
+mat-error {
+  margin-bottom: 10px !important;
+}

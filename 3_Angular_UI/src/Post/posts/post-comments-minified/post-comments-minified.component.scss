@@ -1,0 +1,10 @@
+@use "../../../styles.scss" as s;
+
+p {
+  margin: 0;
+}
+
+.view-all-comments-text {
+  color: s.$clap-gray;
+  cursor: pointer;
+}
