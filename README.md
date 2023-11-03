@@ -3,9 +3,6 @@
 Sosiaalisen median sovellus jossa voi tehdä postauksia kuvalla tai ilman ja selata postauksia paikkakunta kohtaisesti.
 Olen kehittänyt projektin täysin itse ( projekti on vielä kehitys vaiheessa vaikka paljon toiminnallisuuksia jo on )
 
-Käy testailemassa painamalla oheista linkkiä: [clap-app](https://clap-app.net/)
-(Käyttäjän luomis vaiheessa vahvistus koodi saattaa mennä roskapostiin)
-
 # Teknologiat
 Natiivit cloudformation templatet jolla luotu IaC AWS palveluihin.
 Angular, PWA, http api gateway + lambda jossa pyörii koa.js, event pohjaisesti reagoidaan tietokanta lisäyksiin ja lähetetään esim socketin avulla notifikaatioita
